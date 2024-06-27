@@ -102,3 +102,10 @@ CRUD uygulamaları çoğu web uygulamasının temelidir. Harici bir kaynaktan ve
 - "addToFavorites" işlevini ekleyin. `Film` bileşeninde favori butonuna basıldığında, o anda görüntülenenin idsinin ve adının `App.js`deki favori state diliminde olduğundan emin olun.
 - Ekstra kredi için, yalnızca benzersiz filmlerin favori olarak eklenebildiğinden emin olun. Diziler için ".find" metodunu nasıl kullandığımızı hatırlayın.
 - Projeye gece modu ekleyin.
+
+
+
+### Bizim Görevler :
+- güncelleme ve yeni kayıtta. liste doğru gözükmeli.
+- favorilere ekle yi çalışır hale getirelim.
+- sil doğru çalışmalı.

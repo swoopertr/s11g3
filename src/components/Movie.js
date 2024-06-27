@@ -1,26 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useHistory } from "react-router-dom";
+import { ApiHelper } from "../apiFunctions/apiHelper";
 
 import axios from "axios";
 
 const Movie = (props) => {
   const { addToFavorites } = props;
 
-  const [movie, setMovie] = useState("");
+  const [movie, setMovie] = useState(null);
 
   const { id } = useParams();
   const { push } = useHistory();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:9000/api/movies/${id}`)
-      .then((res) => {
-        setMovie(res.data);
-      })
-      .catch((err) => {
-        console.log(err.response);
-      });
+    const getMovieById = async () => {
+     const response = await ApiHelper.getMovieById(id)
+    setMovie(response);
+    }
+    getMovieById()
   }, [id]);
+
+
+if (!movie) {
+  return <div>Loading...</div>;
+}
 
   return (
     <div className="bg-white rounded-md shadow flex-1">
