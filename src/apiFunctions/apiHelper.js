@@ -49,7 +49,7 @@ export const ApiHelper = {
           "Accept": "application/json",
         },
         body: JSON.stringify({
-          "id": Date.now().valueOf(),
+          "id": `${Date.now().valueOf()}`,
           "title": title,
           "director": director,
           "metascore": metascore,

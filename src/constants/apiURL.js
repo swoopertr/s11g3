@@ -1,1 +1,1 @@
-export const apiURL = "https://24mzwmm3-9000.euw.devtunnels.ms/api"
+export const apiURL = "http://localhost:9000/api"

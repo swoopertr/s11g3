@@ -6,6 +6,7 @@ import { ApiHelper } from '../apiFunctions/apiHelper';
 const EditMovieForm = props => {
     const { push } = useHistory();
     const { id } = useParams();
+    const {setMovies} = props;
     
     const [movie, setMovie] = useState({});
     useEffect(() => {
@@ -26,6 +27,7 @@ const EditMovieForm = props => {
     const handleSubmit = async e => {
         e.preventDefault();
         const updatedMovies = await ApiHelper.putMovies(id, movie.title, movie.director, movie.metascore, movie.genre, movie.description);
+        setMovies(updatedMovies);
         push(`/movies/${id}`);
     };
 
